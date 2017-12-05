@@ -1,0 +1,102 @@
+var meta = {
+	"name" : { 
+		"type" : "id",
+		"comment" : "Name of the country concerned"
+	},
+	"bars" : {
+		"type" : "number",
+		"comment" : "Number of vertical bars in the flag",
+	},
+	"stripes" : {
+		"type" : "number",
+		"comment" : "Number of horizontal stripes in the flag"
+	},
+	"colours" : {
+		"type" : "number",
+		"comment" : "Number of different colours in the flag"
+	},
+	"red" : {
+		"type" : "boolean",
+		"comment" : "0 if color absent, 1 if color present in the flag"
+	},
+	"green" : {
+		"type" : "boolean",
+		"comment" : "0 if color absent, 1 if color present in the flag"
+	},
+	"blue" : {
+		"type" : "boolean",
+		"comment" : "0 if color absent, 1 if color present in the flag"
+	},
+	"gold" : {
+		"type" : "boolean",
+		"comment" : "0 if color absent, 1 if color present in the flag"
+	},
+	"white" : {
+		"type" : "boolean",
+		"comment" : "0 if color absent, 1 if color present in the flag"
+	},
+	"black" : {
+		"type" : "boolean",
+		"comment" : "0 if color absent, 1 if color present in the flag"
+	},
+	"orange" : {
+		"type" : "boolean",
+		"comment" : "0 if color absent, 1 if color present in the flag"
+	},
+	"mainhue" : {
+		"type" : "set",
+		"values" : ["green", "red", "blue", "gold", "white", "orange", "black", "brown"],
+		"comment" : "predominant colour in the flag (tie-breaks decided by taking the topmost hue, if that fails then the most central hue, and if that fails the leftmost hue)",
+		"question" : "Choose main hue of the flag"
+	},
+	"circles" : {
+		"type" : "number",
+		"comment" : "Number of circles in the flag"
+	},
+	"crosses" : {
+		"type" : "number",
+		"comment" : "Number of (upright) crosses"
+	},
+	"saltires" : {
+		"type" : "number",
+		"comment" : "Number of diagonal crosses"
+	},
+	"quarters" : {
+		"type" : "number",
+		"comment" : "Number of quartered sections"
+	},
+	"sunstars" : {
+		"type" : "number",
+		"comment" : "Number of sun or star symbols"
+	},
+	"crescent" : {
+		"type" : "boolean",
+		"comment" : "1 if a crescent moon symbol present, else 0"
+	},
+	"triangle" : {
+		"type" : "boolean",
+		"comment" : "1 if any triangles present, 0 otherwise"
+	},
+	"icon" : {
+		"type" : "boolean",
+		"comment" : "1 if an inanimate image present (e.g., a boat), otherwise 0"
+	},
+	"animate" : {
+		"type" : "boolean",
+		"comment" : "1 if an animate image (e.g., an eagle, a tree, a human hand) present, 0 otherwise"
+	},
+	"text" : {
+		"type" : "boolean",
+		"comment" : "1 if any letters or writing on the flag (e.g., a motto or slogan), 0 otherwise"
+	},
+	"topleft" : {
+		"type" : "set",
+		"values" : ["black", "red", "green", "blue", "white", "orange", "gold"],
+		"comment" : "colour in the top-left corner (moving right to decide tie-breaks)"
+	},
+	"botright" : {
+		"type" : "set",
+		"values" : ["green", "red", "white", "black", "blue", "gold", "orange", "brown"],
+		"comment" : "Colour in the bottom-left corner (moving left to decide tie-breaks)"
+	}
+}

@@ -1,0 +1,70 @@
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Oswald|Roboto" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<body class="sheldon">
+	<div class="container main">
+		<div class="jumbotron">
+			<form id="form" class="row">
+				<!--h1>Expert System<br>over flag dataset</h1-->
+				<div class="col-lg-12">
+					<img src="css/funwhitflagLogo.png" height="200">
+				</div>
+				<div class="col-lg-12">
+					<p>Think about a flag and answer questions below.</p>
+				</div>
+				<div class="col-lg-12">
+					<h1 id="question"></h1>
+				</div>
+				<div id="numberSubmit" class="col-lg-6 offset-lg-3">
+					<div class="input-group">
+					    <input type="text" class="form-control" name="number" autocomplete="off">
+						<span class="input-group-btn">
+							<button class="btn btn-secondary btn-lg" name="numberSubmit" type="button">Submit</button>
+						</span>
+					</div>
+				</div>
+				<div id="booleanSubmit" class="col-lg-12">
+					<div class="input-group">
+					</div>
+				</div>
+				<div id="setSubmit" class="col-lg-12">
+					<div class="input-group">
+					</div>
+				</div>
+				<div id="controls" class="col-lg-12">
+					<button type="button" name="dunnoSubmit" class="btn btn-primary btn-lg">I don't know</button>
+					<button type="button" name="stepBack" class="btn btn-outline-primary btn-lg">Step back</button>
+				</div>
+			</form>
+			<div id="result" class="row">
+				<div class="col-lg-12">
+					<h2 id="answer"></h2>
+				</div>
+				<div class="col-lg-6 offset-lg-3">
+					<img src="" id="flag" class="img-thumbnail">
+				</div>
+				<div class="col-lg-12">
+					<button type="button" name="stepBack" class="btn btn-outline-primary btn-lg">Step back</button>
+				</div>
+				<div class="col-lg-12">
+					<img src="" id="funnyImage">
+				</div>
+			</div>
+		</div>
+	</div>
+		<div id="copyright">
+			Flags dataset was created in 1986
+			<br>
+			Made with passion by <a href="https://www.facebook.com/hanzlpe">Petr Hanzl</a> | Flags dataset from <a href="https://archive.ics.uci.edu/ml/datasets/Flags">UCI</a>
+		</div>
+	<script src="data/bazeZnalosti.json"></script>
+	<script src="data/flagsNameToShortcut.json"></script>
+	<script src="data/datasetMeta.json"></script>
+	<script src="js/komunikacniModul.js"></script>
+	<script src="js/inferencniMechanismus.js"></script>
+</body>
+<!--script src="js/vysvetlovaciModul.js"></script-->
+<!--script src="js/dataKPripadu.js"></script-->
