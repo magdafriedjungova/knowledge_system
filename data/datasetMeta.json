@@ -5,98 +5,138 @@ var meta = {
 	},
 	"bars" : {
 		"type" : "number",
-		"comment" : "Number of vertical bars in the flag",
+		"comment" : "Number of vertical bars on the flag",
+		"question" : "How many vertical stripes are on the flag?",
+		"czechTranslate" : "Kolik je na vlajce vertikálních pruhů?"
 	},
 	"stripes" : {
 		"type" : "number",
-		"comment" : "Number of horizontal stripes in the flag"
+		"comment" : "Number of horizontal stripes on the flag",
+		"question" : "How many horizontal stripes are on the flag?",
+		"czechTranslate" : "Kolik vodorovných pruhů se na vlajce nachází?"
 	},
 	"colours" : {
 		"type" : "number",
-		"comment" : "Number of different colours in the flag"
+		"comment" : "Number of different colors on the flag",
+		"question" : "How many different colors are on the flag?",
+		"czechTranslate" : "Kolik různých barev vlajka obsahuje?"
 	},
 	"red" : {
 		"type" : "boolean",
-		"comment" : "0 if color absent, 1 if color present in the flag"
+		"comment" : "0 if color absent, 1 if color present on the flag",
+		"question" : "Is the color red on the flag?",
+		"czechTranslate" : "Je na vlajce červená barva?"
 	},
 	"green" : {
 		"type" : "boolean",
-		"comment" : "0 if color absent, 1 if color present in the flag"
+		"comment" : "0 if color absent, 1 if color present on the flag",
+		"question" : "Is the color green on the flag?",
+		"czechTranslate" : "Je na vlajce zelená barva?"
 	},
 	"blue" : {
 		"type" : "boolean",
-		"comment" : "0 if color absent, 1 if color present in the flag"
+		"comment" : "0 if color absent, 1 if color present on the flag",
+		"question" : "Is the color blue on the flag?",
+		"czechTranslate" : "Je na vlajce modrá barva?"
 	},
 	"gold" : {
 		"type" : "boolean",
-		"comment" : "0 if color absent, 1 if color present in the flag"
+		"comment" : "0 if color absent, 1 if color present on the flag",
+		"question" : "Is the color gold on the flag?",
+		"czechTranslate" : "Je na vlajce zlatá barva?"
 	},
 	"white" : {
 		"type" : "boolean",
-		"comment" : "0 if color absent, 1 if color present in the flag"
+		"comment" : "0 if color absent, 1 if color present on the flag",
+		"question" : "Is the color white on the flag?",
+		"czechTranslate" : "Je na vlajce bílá barva?"
 	},
 	"black" : {
 		"type" : "boolean",
-		"comment" : "0 if color absent, 1 if color present in the flag"
+		"comment" : "0 if color absent, 1 if color present on the flag",
+		"question" : "Is the color black on the flag?",
+		"czechTranslate" : "Je na vlajce černá barva?"
 	},
 	"orange" : {
 		"type" : "boolean",
-		"comment" : "0 if color absent, 1 if color present in the flag"
+		"comment" : "0 if color absent, 1 if color present on the flag",
+		"question" : "Is the color orange on the flag?",
+		"czechTranslate" : "Je na vlajce oranžová barva?"
 	},
 	"mainhue" : {
 		"type" : "set",
 		"values" : ["green", "red", "blue", "gold", "white", "orange", "black", "brown"],
 		"comment" : "predominant colour in the flag (tie-breaks decided by taking the topmost hue, if that fails then the most central hue, and if that fails the leftmost hue)",
-		"question" : "Choose main hue of the flag"
+		"question" : "Which color listed below is the most dominant on the flag?",
+		"czechTranslate" : "Která z barev níže je na vlajce dominantní?"
 	},
 	"circles" : {
 		"type" : "number",
-		"comment" : "Number of circles in the flag"
+		"comment" : "Number of circles on the flag",
+		"question" : "How many circles are on the flag?",
+		"czechTranslate" : "Kolik je na vlajce kruhů?"
 	},
 	"crosses" : {
 		"type" : "number",
-		"comment" : "Number of (upright) crosses"
+		"comment" : "Number of (upright) crosses",
+		"question" : "How many crosses are on the flag?",
+		"czechTranslate" : "Kolik je na vlajce křížů?"
 	},
 	"saltires" : {
-		"type" : "number",
-		"comment" : "Number of diagonal crosses"
-	},
-	"quarters" : {
-		"type" : "number",
-		"comment" : "Number of quartered sections"
+		"type" : "boolean",
+		"comment" : "Number of diagonal crosses",
+		"question" : "Is there a diagonal cross on the flag?",
+		"czechTranslate" : "Je na vlajce diagonální kříž?"
+
 	},
 	"sunstars" : {
 		"type" : "number",
-		"comment" : "Number of sun or star symbols"
+		"comment" : "Number of sun or star symbols",
+		"question" : "How many sun or star symbols are on the flag?",
+		"czechTranslate" : "Kolik je na vlajce symbolů sluncí nebo hvězd?"
 	},
 	"crescent" : {
 		"type" : "boolean",
-		"comment" : "1 if a crescent moon symbol present, else 0"
+		"comment" : "1 if a crescent moon symbol present, else 0",
+		"question" : "Is there a moon symbol on the flag?",
+		"czechTranslate" : "Je na vlajce nějaký symbol měsíce?"
 	},
 	"triangle" : {
 		"type" : "boolean",
-		"comment" : "1 if any triangles present, 0 otherwise"
+		"comment" : "1 if any triangles present, 0 otherwise",
+		"question" : "Is there a triangle on the flag?",
+		"czechTranslate" : "Je na vlajce nějaký trojúhelník?"
 	},
 	"icon" : {
 		"type" : "boolean",
-		"comment" : "1 if an inanimate image present (e.g., a boat), otherwise 0"
+		"comment" : "1 if an inanimate image present (e.g., a boat), otherwise 0",
+		"question" : "Is there an inanimate object on the flag?",
+		"czechTranslate" : "Je na vlajce něco neživého? Např. loď, skála apod."
 	},
 	"animate" : {
 		"type" : "boolean",
-		"comment" : "1 if an animate image (e.g., an eagle, a tree, a human hand) present, 0 otherwise"
+		"comment" : "1 if an animate image (e.g., an eagle, a tree, a human hand) present, 0 otherwise",
+		"question" : "Is there an animate object on the flag?",
+		"czechTranslate" : "Je na vlajce něco živého? Např. zvíře, člověk, strom apod."
 	},
 	"text" : {
 		"type" : "boolean",
-		"comment" : "1 if any letters or writing on the flag (e.g., a motto or slogan), 0 otherwise"
+		"comment" : "1 if any letters or writing on the flag (e.g., a motto or slogan), 0 otherwise",
+		"question" : "Are there letters or text on the flag?",
+		"czechTranslate" : "Jsou na vlajce nějaká písmena nebo text?"
 	},
 	"topleft" : {
 		"type" : "set",
 		"values" : ["black", "red", "green", "blue", "white", "orange", "gold"],
-		"comment" : "colour in the top-left corner (moving right to decide tie-breaks)"
+		"comment" : "Color in the top-left corner (moving right to decide tie-breaks)",
+		"question" : "Which one of these colors is in the top left corner of the flag?",
+		"czechTranslate" : "Která z barev je v levém horním rohu vlajky?"
 	},
 	"botright" : {
 		"type" : "set",
 		"values" : ["green", "red", "white", "black", "blue", "gold", "orange", "brown"],
-		"comment" : "Colour in the bottom-left corner (moving left to decide tie-breaks)"
+		"comment" : "Color in the bottom-left corner (moving left to decide tie-breaks)",
+		"question" : "Which one of these colors is in the bottom right corner of the flag?",
+		"czechTranslate" : "Která z barev je v pravém dolním rohu vlajky?"
 	}
 }
