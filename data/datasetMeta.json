@@ -66,8 +66,8 @@ var meta = {
 	"mainhue" : {
 		"type" : "set",
 		"values" : ["green", "red", "blue", "gold", "white", "orange", "black", "brown"],
-		"comment" : "predominant colour in the flag (tie-breaks decided by taking the topmost hue, if that fails then the most central hue, and if that fails the leftmost hue)",
-		"question" : "Which color listed below is the most dominant on the flag?",
+		"comment" : "predominant color in the flag (tie-breaks decided by taking the topmost hue, if that fails then the most central hue, and if that fails the leftmost hue)",
+		"question" : "Which color listed below is <a>the most dominant</a> on the flag?",
 		"czechTranslate" : "Která z barev níže je na vlajce dominantní?"
 	},
 	"circles" : {
@@ -129,14 +129,14 @@ var meta = {
 		"type" : "set",
 		"values" : ["black", "red", "green", "blue", "white", "orange", "gold"],
 		"comment" : "Color in the top-left corner (moving right to decide tie-breaks)",
-		"question" : "Which one of these colors is in the top left corner of the flag?",
+		"question" : "Which one of these colors is in <a>the top left corner</a> of the flag?",
 		"czechTranslate" : "Která z barev je v levém horním rohu vlajky?"
 	},
 	"botright" : {
 		"type" : "set",
 		"values" : ["green", "red", "white", "black", "blue", "gold", "orange", "brown"],
 		"comment" : "Color in the bottom-left corner (moving left to decide tie-breaks)",
-		"question" : "Which one of these colors is in the bottom right corner of the flag?",
+		"question" : "Which one of these colors is in <a>the bottom right corner</a> of the flag?",
 		"czechTranslate" : "Která z barev je v pravém dolním rohu vlajky?"
 	}
 }

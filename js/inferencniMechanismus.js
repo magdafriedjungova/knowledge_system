@@ -44,20 +44,28 @@ function shouldContinueInGame() {
 
 	if(Object.keys(data[Object.keys(data)[0]]).length == 1) {
 		var _maximum1 = 0;
-		var _maximum2 = 0;
-		var _flag = false;
 		var _answer;
+		var _sameProbabilityElements = 0;
+		var _sum = 0;
+		var _results = [];
 		$.each(data, function(_key, _elem) {
-			if( _elem.probability > _maximum1) {
-				if( !_flag ) {
-					_maximum2 = _maximum1;
-					_flag = true;
-				}
+			if( _elem.probability > _maximum1 ) {
 				_maximum1 = _elem.probability;
 				_answer = _key;
+				_sameProbabilityElements = 1;
+			} else if(_elem.probability == _maximum1) {
+				_sameProbabilityElements++;
 			}
+			_sum += _elem.probability;
+			_results.push({"name":_key,"probability":_elem.probability});
 		});
-		endGame(true, _answer);
+
+		if( _sameProbabilityElements > 1) {
+			_results.sort(function(a,b) {return (a.probability > b.probability) ? -1 : ((b.probability > a.probability) ? 1 : 0)});
+			endGame(false, _sameProbabilityElements,_results,_sum);
+		} else {
+			endGame(true, _answer);
+		}
 		return false;
 	}
 	return true;
@@ -92,6 +100,19 @@ function play(back) {
 	}
 }
 
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
+
+var i=0;
+$("form").show();
+$("#result").hide();
+$("#multipleResults").hide();
+$("#numberSubmit").hide();
+$("[name=dunnoSubmit]").hide();
+
 $.each(data, function(key, attrs) {
 	$.each(attrs, function(attrkey, attr) {
 		if( meta[attrkey] == undefined ) {
@@ -100,25 +121,10 @@ $.each(data, function(key, attrs) {
 			});
 		}
 	});
+	attrs["probability"] = 0;
 	return;
 });
 
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
-}
-
-$.each(data, function(key, element) {
-	element["probability"] = 0;
-});
-
-var i=0;
-$("form").show();
-$("#result").hide();
-$("#numberSubmit").hide();
-$("[name=dunnoSubmit]").hide();
-var dataStepBack = jQuery.extend(true, {}, data);
 var tmpQuestion;
 var previousQuestion;
 play();

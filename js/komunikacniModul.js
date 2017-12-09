@@ -3,6 +3,7 @@ var $setSubmit = $("#setSubmit");
 var $numberSubmit = $("#numberSubmit");
 var $question = $("#question");
 var $result = $("#result");
+var $multipleResults = $("#multipleResults");
 var $dunnoSubmit = $("[name=dunnoSubmit]");
 var $stepBack = $("[name=stepBack]");
 
@@ -59,8 +60,6 @@ $("form").on("click", "[name=dunnoSubmit]", function() {
 $("[name=stepBack]").on("click", "", function() {
 	stepBack();
 	$(".jumbotron").css("align-items","center");
-	$question.show();
-	$result.hide();
 	$("p").show();
 	$("img").show();
 	$(".jumbotron").attr("class","jumbotron");
@@ -68,10 +67,16 @@ $("[name=stepBack]").on("click", "", function() {
 	$setSubmit.hide();
 	$booleanSubmit.hide();
 	$dunnoSubmit.hide();
-	$("form").show();
 	$result.hide();
+	$multipleResults.hide();
+	$question.show();
+	$("form").show();
 	play(true);
 	$("[name=stepBack]").prop("disabled",true);
+});
+
+$("[name=resetGame]").on("click", "", function() {
+	location.reload();
 });
 
 $("form").submit(function(event) {
@@ -114,6 +119,14 @@ function generateQuestion(question) {
 		}
 	}
 	$question.html(_output);
+	createTooltip(question);
+}
+
+function createTooltip(question) {
+	$("#question a").attr("data-toggle","tooltip");
+	$("#question a").attr("data-placement","bottom");
+	$("#question a").attr("title",meta[question].comment);
+	$("a").tooltip();
 }
 
 function generateInputs(question) {
@@ -188,24 +201,22 @@ function generateInputGroup() {
 	return _elem;
 }
 
-function endGame(found,answer) {
+function endGame(found,answer,results,sum) {
 	$question.hide();
 	$numberSubmit.hide();
 	$setSubmit.hide();
 	$booleanSubmit.hide();
 	$dunnoSubmit.hide();
 	$("#form").hide();
-	$result.show();
-	$(".jumbotron").css("align-items","flex-end");
 	$("[name=stepBack]").prop("disabled",false);
-	$result.show();
 	if(found) {
+		$(".jumbotron").css("align-items","flex-end");
 		if(answer == "USA") {
 			$result.find('#funnyImage').attr("src","css/sheldonUSA.png");
 			$result.find('#funnyImage').css("width","50%");
 		} else if(answer == "Czechoslovakia") {
 			$result.find('#funnyImage').attr("src","css/sheldonCzechoslovakia.png");
-			$result.find('#funnyImage').css("width","80%");
+			$result.find('#funnyImage').css("width","30%");
 		} else {
 			$result.find('#funnyImage').attr("src","css/sheldonandamy.png");
 			$result.find('#funnyImage').css("width","80%");
@@ -216,11 +227,40 @@ function endGame(found,answer) {
 		} else {
 			$result.find('#flag').hide();
 		}
+		$result.show();
 	} else {
 		$(".jumbotron").css("align-items","center");
-		$result.find("#answer").text("No flag has these attributes.");
-		$result.find('#flag').hide();
-		$result.find('#funnyImage').attr("src","css/notfound.jpg");
-		$result.find('#funnyImage').css("width","70%");
+		if(results == undefined) {
+			$result.find("#answer").text("No flag has these attributes.");
+			$result.find('#flag').hide();
+			$result.find('#funnyImage').attr("src","css/notfound.jpg");
+			$result.find('#funnyImage').css("width","70%");
+			$result.show();
+		} else {
+			$(".jumbotron").css("align-items","center");
+			$multipleResults.find("#resultsCount").text(answer);
+			$p = $multipleResults.find("p");
+			$p.html("");
+			if(answer > 30) {
+				$p.append("Reset game and be more specific.");
+				$multipleResults.show();
+				return;
+			}
+			var x = 0;
+			var flag = false;
+			$.each(results, function(key, elem) {
+				if(flag) {
+					$p.append(", ");
+				}
+				$p.append(elem.name);
+				if(x > answer) {
+					$multipleResults.show();
+					return false;
+				}
+				flag = true;
+				x++;
+			});
+			$multipleResults.show();
+		}
 	}
 }
